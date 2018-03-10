@@ -1,5 +1,10 @@
 /* style.css */
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
 
+jeju{
+    font-family: 'Jeju Gothic'
+    sans-serif;
+}
 
 body{
     background:#599;
@@ -30,7 +35,7 @@ body{
 }
 
 img{
-    max-width: 300px;
+    max-width: 200px;
     height: auto;
   }
 
