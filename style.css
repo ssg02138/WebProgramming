@@ -87,7 +87,7 @@ a.mylink:hover{
 .video-container {
     position: relative;
     padding-bottom: 56.25%;
-    padding-top: 30px; height: 0; overflow: hidden;
+    padding-top: 10px; height: 0; overflow: hidden;
 }
  
 .video-container iframe,
@@ -96,6 +96,6 @@ a.mylink:hover{
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: auto;
     height: auto;
 }
