@@ -29,6 +29,11 @@ body{
     font-weight: bold;
 }
 
+.svg{
+    height:400px;
+    background-image: url(logo.svg)
+  }
+
 span{
     font-weight: bold;
 }
