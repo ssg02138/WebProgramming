@@ -1,9 +1,14 @@
 /* style.css */
 @import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+@import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
 
-jeju{
-    font-family: 'Jeju Gothic'
-    sans-serif;
+h1{
+    font-family: 'Jeju Gothic', sans-serif;
+}
+
+
+h2{
+    font-family: 'Nanum Pen Script', cursive;
 }
 
 body{
