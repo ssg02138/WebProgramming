@@ -12,15 +12,15 @@ h2{
 }
 
 body{
-    background:#599;
+    background:rgba(255, 174, 0, 0.637);
     margin:0;
 }
 
 #main {
     max-width:800px;
-    min-height:500px;
+    min-height:600px;
     padding:5px;
-    background: #fff;
+    background: rgba(0, 0, 153, 0.404);
     margin:auto;
 
 }
@@ -73,14 +73,14 @@ a.mylink:hover{
     background:#000;
     color:#0f0;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 600px) {
     body {
-        background-color:#f55;
+        background-color:#555;
         margin:5px;
     }
 
     #main{
-        background-color: #fdf;
+        background-color: #0f0;
     }
 }
 
