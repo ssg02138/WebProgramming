@@ -22,7 +22,22 @@ body{
     padding:5px;
     background: rgba(0, 0, 153, 0.404);
     margin:auto;
+    text-align: center;
 
+}
+#nav{
+    text-align: center;
+}
+#nav div{
+    display:inline-block;
+    padding: 50px;
+    border : 1px solid rgba(255, 174, 0, 0.637);
+    margin : 15px;
+    cursor: pointer;
+}
+
+#title {
+    text-align: center;
 }
 #content{
     min-height:500px;
