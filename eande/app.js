@@ -8,3 +8,5 @@ window.onload = function(){
         this.style.backgroundColor = "#f00";
     }
 }
+
+// 중간고사 1. 로딩페이지(css 애니메이션) 만들기
