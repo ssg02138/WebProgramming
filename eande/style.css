@@ -1,0 +1,10 @@
+#box1, box2{
+    width: 100px;
+    height: 100px;
+    display:inline-block;
+    margin: 10px;
+}
+
+#box2:hover{
+    background: #00f;
+}
