@@ -1,4 +1,4 @@
-/* phonejs.js*/
+/* myjs.js*/
 
 var pb = new Array();
 
