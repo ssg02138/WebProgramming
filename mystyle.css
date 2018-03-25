@@ -213,15 +213,3 @@ title{
     margin: left;
     max-width: 500px;
 }
-#btnSave, #btnSort{
-    padding:5px;
-    margin-top: 5px;
-    background: cadetblue;
-    color:#fff;
-    border:0;
-    cursor: pointer;
-}
-table{
-    border:1px solid #ddd;
-    width:100%;
-}
