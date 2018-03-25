@@ -23,12 +23,46 @@ function updateTable(p){
     cell4.innerHTML = '<td>'+'<button id="btnDel" onclick="removeRow(this);">Del</button>'+'</td>';
 }
 
-document.getElementById("btnSort").onclick=function(){
+function lnSort(){
     mytable = document.getElementById('insertTable');
     row = mytable.insertRow(mytable.rows.length);
 
     pb.sort(function(a, b) { // 오름차순
         return a.lastName < b.lastName ? -1 : a.lastName > b.lastName ? 1 : 0;
+    });
+    
+    for(var i =1; i<=pb.length; i++){
+        var x = mytable.rows[i].cells;
+        x[0].innerHTML=pb[i-1].lastName;
+        x[1].innerHTML=pb[i-1].firstName;
+        x[2].innerHTML=pb[i-1].phoneNumber;
+        x[3].innerHTML='<td>'+'<button id="btnDel" onclick="removeRow(this);">Del</button>'+'</td>';
+    }
+}
+
+function fnSort(){
+    mytable = document.getElementById('insertTable');
+    row = mytable.insertRow(mytable.rows.length);
+
+    pb.sort(function(a, b) { // 오름차순
+        return a.firstName < b.firstName ? -1 : a.firstName > b.firstName ? 1 : 0;
+    });
+    
+    for(var i =1; i<=pb.length; i++){
+        var x = mytable.rows[i].cells;
+        x[0].innerHTML=pb[i-1].lastName;
+        x[1].innerHTML=pb[i-1].firstName;
+        x[2].innerHTML=pb[i-1].phoneNumber;
+        x[3].innerHTML='<td>'+'<button id="btnDel" onclick="removeRow(this);">Del</button>'+'</td>';
+    }
+}
+
+function phoneSort(){
+    mytable = document.getElementById('insertTable');
+    row = mytable.insertRow(mytable.rows.length);
+
+    pb.sort(function(a, b) { // 오름차순
+        return a.phoneNumber < b.phoneNumber ? -1 : a.phoneNumber > b.phoneNumber ? 1 : 0;
     });
     
     for(var i =1; i<=pb.length; i++){
@@ -50,4 +84,20 @@ document.getElementById("btnSave").onclick=function(){
     pb.push(p);
 
     updateTable(p);
+}
+
+function highlightg(i){
+
+}
+
+function Check(){
+    mytable = document.getElementById('insertTable');
+    var val = document.getElementById('cb1').value;
+    var input;
+    for(var i=1;i<=pb.length;i++){
+        input = mytable.rows[i].cells[0].innerHTML;
+        if(input == val){
+            mytable.rows[i].cells[0].innerHTML="<td><mark>"+val+"</mark></td>";
+        }
+    }
 }
