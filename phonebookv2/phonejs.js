@@ -86,10 +86,6 @@ document.getElementById("btnSave").onclick=function(){
     updateTable(p);
 }
 
-function highlightg(i){
-
-}
-
 function Check(){
     mytable = document.getElementById('insertTable');
     var val = document.getElementById('cb1').value;
