@@ -4,5 +4,5 @@ xampp == apach + MariaDB + PHP + Perl
 php == .php에서 동작
 
 --Request--
-POST = 
-GET = 
+POST = url에서 안보임(븨밀)
+GET = url에서 표시됨 (?id=xxx&pw=xxx&...)
