@@ -1,0 +1,8 @@
+apachefriends.org = xampp 다운로드
+xampp == apach + MariaDB + PHP + Perl
+
+php == .php에서 동작
+
+--Request--
+POST = 
+GET = 
