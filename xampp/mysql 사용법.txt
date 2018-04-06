@@ -1,0 +1,29 @@
+-- Connet mysql server --
+xampp 에서 작동 안될경우 : port 번호 수정
+cmd -> cd xampp\mysql\bin -> mysql -u [사용자] -p [비밀번호] -P [포트번호] -h [접속지]
+
+-- DDL --
+-- DB 조작 --
+SHOW DATABASES; -> 데이터베이스 목록 보여줌
+exit -> 접속 종료
+CREATE DATABASE [DB명]; -> DB 생성
+DROP DATABASE [DB명]; -> DB 삭제
+USE [DB명]; -> DB접근
+
+-- TABLE 조작 --
+SHOW TABLES; -> DB의 테이블 목록 보여줌
+DROP TABLE [TABLE명]; -> 테이블 삭제
+CREATE TABLE [TABLE명]; -> DB에서 TABLE 생성
+CREATE TABLE customers (id int(5), lastname VARCHAR(30), firstname VARCHAR(30), phonenumber VARCHAR(15), credit_limit int(10)); (행값 자료타입)
+DESCRIBE [TABLE명]; -> 오름차순으로 DB 테이블 조회
+CREATE TABLE customers (id int(5) PRIMARY KEY AUTO_INCREMENT, lastname VARCHAR(30)); (AUTO_INCREMENT = 번호 자동 부여)
+ALTER TABLE -> 테이블 수정
+ALTER TABLE customers ADD birthday DATE AFTER phonenumber; -> date 타입의 birthday를 phonenumber 뒤에 삽입
+ALTER TABLE customers MODIFY id int(5) PRIMARY KEY AUTO_INCREMENT; -> field에 키 타입 저장
+
+-- DML --
+INSERT INTO [TABLE명] (field, field, ...) VALUE (값, 값, ...)
+INSERT INTO employees (id, lastname, firstname, salary, birthday) VALUES ('1', 'Kim', 'Jason', '1000', '1999-12-10');
+SELECT [field명] FROM [TABLE명]; -> table에 저장된 recode 보여줌
+UPDATE [TABLE명] SET [field명]='' WHERE [field명]='' -> RECODE 업데이트
+UPDATE employees SET id = '1' WHERE firstname ='Jason';
