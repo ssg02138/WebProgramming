@@ -24,6 +24,21 @@ ALTER TABLE customers MODIFY id int(5) PRIMARY KEY AUTO_INCREMENT; -> field에 키
 -- DML --
 INSERT INTO [TABLE명] (field, field, ...) VALUE (값, 값, ...)
 INSERT INTO employees (id, lastname, firstname, salary, birthday) VALUES ('1', 'Kim', 'Jason', '1000', '1999-12-10');
-SELECT [field명] FROM [TABLE명]; -> table에 저장된 recode 보여줌
+SELECT [field명] FROM [TABLE명]; -> table에 저장된 field recode 보여줌
+SELECT [statment]; -> console처럼 명령을 수행함 SELECT 1+1; -> 2
+SELECT * FROM customers WHERE id = 1; -> WHERE 조건에 맞는 값만 반환
+SELECT id, CONCAT (lastname, ' ', firstname) FROM customers; -> CONCAT 문자열 합쳐서 보여줌
+SELECT id, CONCAT (lastname, ' ', LEFT(firstname,2)) FROM customers; -> LEFT 값만큼 보여줌
+함수명은 홈페이지에서 찾아야함
+https://dev.mysql.com/doc/refman/8.0/en/string-functions.html - mysql documentation 사이트
+SELECT * FROM customers, bankaccounts; -> 연결되어 있는 모든 정보를 호출(너무 많음)
+SELECT customers.id, lastname, firstname, account_no, account_type FROM  customers, bankaccounts WHERE customers.id=bankaccount.customer; -> 호출되는 정보 제한
+SELECT customers.id, lastname, firstname, account_no, account_type FROM customers INNER JOIN bankaccounts ON customers.id=bankaccounts.customer; -> 똑같은 호출명령어 (INNER JOIN, ON)
+SELECT customers.id '[별칭]', lastname '[별칭]', firstname '[별칭]', account_no '[별칭]', account_type '[별칭]' FROM  customers, bankaccounts WHERE customers.id=bankaccount.customer; -> 별칭 붙이기
 UPDATE [TABLE명] SET [field명]='' WHERE [field명]='' -> RECODE 업데이트
 UPDATE employees SET id = '1' WHERE firstname ='Jason';
+
+-- Relationship Table --
+FOREIGN KEY (table 명) == 자신 테이블 field 값 중 참조할 값
+REFERENCES [참조될 table명(field명)] -> 참조될 값 위치
+CONSTRAINT -> ALTER TABLE bankaccounts ADD FOREIGN KEY (참조할 table명) REFERENCES [참조될 TABLE명](field명); -> bankaccounts의 참조할 table에 참조될 테이블 값을 연동
