@@ -1,0 +1,17 @@
+1. php.ini에서 
+
+<?php
+
+$user="root";	// DB 사용자 설정
+$pass="";	// DB 패스워드 설정
+$host="localhost:4000";	// DB 장소:포트 설정
+
+$con = @mysqli_connet($host, $user, $pass);
+
+if($con)
+ echo "연결됨";
+else
+ echo "연결안됨";
+
+숙제 : php로 DB연동시키기
+http://webdir.tistory.com/378 에 있을듯
