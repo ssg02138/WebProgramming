@@ -1,34 +1,44 @@
-1. php.ini에서 
+php 실행 방법
+1. apache 실행 -> localhost 접속 -> 웹 내에서 실행
+
+실습 내용 = .\phpmysql
+
+# PHP and MySQl Functions
+
+phpmysq01\connect01.php
+
+$db = @mysqli_connect($host, $user, $pass, "yournamebank", $port);
+// @ = 오류 발생시 동작
+// DATABASE 이름이 다르면 오류 발생
+// port가 기본포트인 3306이면 dbname, port 작성 안하고 진입 가능
+
+phpmysql01\connect02.php
+
+$dbc = @mysqli_select_db($db, $dbname);
+// DATABASE 선택
+
+phpmysql02\customers.php
+
+<form method="POST">
+// POST로 입력값 전달
 
 <?php
+        if($_POST){
+            $data['ln'] = $_POST['ln'];
+            $data['fn'] = $_POST['fn'];
+            $data['bd'] = $_POST['bd'];
 
-$user="root";	// DB 사용자 설정
-$pass="";	// DB 패스워드 설정
-$host="localhost:4000";	// DB 장소:포트 설정
-
-$con = @mysqli_connet($host, $user, $pass);
-
-if($con)
- echo "연결됨";
-else
- echo "연결안됨";
-
-숙제 : php로 DB연동시키기
-http://webdir.tistory.com/378 에 있을듯
-
-<?php
-echo "MySql 연결 테스트<br>";
- 
-$db = mysqli_connect("localhost", "root", "비밀번호", "world");
- 
-if($db){
-    echo "connect : 성공<br>";
-}
-else{
-    echo "disconnect : 실패<br>";
-}
- 
-$result = mysqli_query($db, 'SELECT VERSION() as VERSION');
-$data = mysqli_fetch_assoc($result);
-echo $data['VERSION'];
+            //var_dump($data);
+            saveCustomer($data);
+        }
 ?>
+// 입력받은값 출력
+// POST = 주소값 비공개, GET = 주소값 공개
+
+phpmysql02\dbfunctions.php
+// customer.php에서 저장된 내용들을 데이터베이스에 저장
+
+
+
+
+

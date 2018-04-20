@@ -3,6 +3,17 @@ xampp == apach + MariaDB + PHP + Perl
 
 php == .php에서 동작
 
+apache 설정파일 = httpd.conf
+DocumentRoot "C:/xampp/public_html"
+<Directory "C:/xampp/public_html">
+// 웹페이지 루트 경로 설정
+
+MySQL 설정파일 = my.ini
+#The MySQL server
+// 포트가 3306이면 클라이언트의 포트와 겹쳐서 충돌 에러 발생
+
+
+
 --Request--
-POST = url에서 안보임(븨밀)
+POST = url에서 안보임(비밀)
 GET = url에서 표시됨 (?id=xxx&pw=xxx&...)
