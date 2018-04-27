@@ -1,0 +1,21 @@
+#main{
+	margin:auto;
+	width:600px;
+	min-height:500px;
+	border:1px solid #aaa;
+	padding:25px;
+}
+
+#input{
+    margin:auto;
+	width:400px;
+    min-height:100px;
+    text-align: center;
+	border:1px solid #aaa;
+	padding:25px;
+}
+
+#footer{
+    margin-bottom:25px;
+    text-align: center;
+}
