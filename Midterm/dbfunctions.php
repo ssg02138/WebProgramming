@@ -24,7 +24,7 @@
             $price = $data['price'];
 
             $table = "customers";
-            $sq = "INSERT INTO product (name, price) VALUES ('$name','$price')";
+            $sq = "INSERT INTO product (id, name, price) VALUES ('','$name','$price')";
 
             if (mysqli_connect_errno())
             {
@@ -37,6 +37,8 @@
                 return true;
             else
                 return false;
+
+            @mysqli_close($con);
     }
 
     function getCustomers(){

@@ -1,86 +1,46 @@
-var pb = new Array();
+function tablesort(n){ //성 정렬, 이름 정렬, 번호 정렬 총 3개만들기
+  
+    var table,  rows, switching, i, x, y,elementchange, dir, switchcount = 0;
 
-function updateTable(p){
-    mytable = document.getElementById('insertTable');
-    row = mytable.insertRow(mytable.rows.length);
+    table  = document.getElementById("insertTable");
+    switching = true;
+   
+     dir = "x"; 
+   
+      while (switching) {
+      switching = false; 
+      rows =  table.getElementsByTagName("tr"); //rows를 유사배열로만듬
+     
+        for (i = 1; i < (rows.length - 1); i++) {  
+          elementchange = false;
+          x = rows[i].getElementsByTagName("td")[n];
+          y = rows[i + 1].getElementsByTagName("td")[n];
 
-    cell1 =row.insertCell(0);
-    cell2 =row.insertCell(1);
-    cell3 =row.insertCell(2);
+            if (dir  == "x") {//크기비교 x가 클때 
+              if (x.innerHTML.toLowerCase()  > y.innerHTML.toLowerCase()) {
+                elementchange= true;
+                break; //for종료
 
-    cell1.innerHTML = '<td>'+p.lastName+'</td>';
-    cell2.innerHTML = '<td>'+p.firstName+'</td>';
-    cell3.innerHTML = '<td>'+p.phoneNumber+'</td>';
-}
+                    }
+                      } 
 
-function idSort(){
-    var p = new Object();   // DataBase 사전 준비
-    p.firstName = document.getElementById("name").value;
-    p.phoneNumber = document.getElementById("price").value;
-
-    pb.push(p);
-
-    updateTable(p);
-
-    mytable = document.getElementById('insertTable');
-    row = mytable.insertRow(mytable.rows.length);
-
-    pb.sort(function(a, b) { // 오름차순
-        return a.lastName < b.lastName ? -1 : a.lastName > b.lastName ? 1 : 0;
-    });
-    
-    for(var i =1; i<=pb.length; i++){
-        var x = mytable.rows[i].cells;
-        x[0].innerHTML=i;
-        x[1].innerHTML=pb[i-1].firstName;
-        x[2].innerHTML=pb[i-1].phoneNumber;
-    }
-}
-
-function nameSort(){
-    var p = new Object();   // DataBase 사전 준비
-    p.firstName = document.getElementById("name").value;
-    p.phoneNumber = document.getElementById("price").value;
-
-    pb.push(p);
-
-    updateTable(p);
-
-    mytable = document.getElementById('insertTable');
-    row = mytable.insertRow(mytable.rows.length);
-
-    pb.sort(function(a, b) { // 오름차순
-        return a.firstName < b.firstName ? -1 : a.firstName > b.firstName ? 1 : 0;
-    });
-    
-    for(var i =1; i<=pb.length; i++){
-        var x = mytable.rows[i].cells;
-        x[0].innerHTML=i;
-        x[1].innerHTML=pb[i-1].firstName;
-        x[2].innerHTML=pb[i-1].phoneNumber;
-    }
-}
-
-function priceSort(){
-    var p = new Object();   // DataBase 사전 준비
-    p.firstName = document.getElementById("name").value;
-    p.phoneNumber = document.getElementById("price").value;
-
-    pb.push(p);
-
-    updateTable(p);
-
-    mytable = document.getElementById('insertTable');
-    row = mytable.insertRow(mytable.rows.length);
-
-    pb.sort(function(a, b) { // 오름차순
-        return a.phoneNumber < b.phoneNumber ? -1 : a.phoneNumber > b.phoneNumber ? 1 : 0;
-    });
-    
-    for(var i =1; i<=pb.length; i++){
-        var x = mytable.rows[i].cells;
-        x[0].innerHTML=i;
-        x[1].innerHTML=pb[i-1].firstName;
-        x[2].innerHTML=pb[i-1].phoneNumber;
-    }
+                else if (dir == "y") {//크기비교 y가 클때
+                      if (x.innerHTML.toLowerCase()  < y.innerHTML.toLowerCase()) { 
+                            elementchange= true; //elementchange = 엘리먼트 순서변경
+                            break; //for종료
+               }
+             }
+           }   
+       if (elementchange) {
+          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);//rows[i+1]이라는 엘리먼트를 rows[i]위에 넣어라
+          switching = true; 
+          switchcount  ++; 
+          } 
+        else {
+          if (switchcount == 0) {
+                  dir = "y";
+                  switching = true;
+          }
+        }
+     }
 }
