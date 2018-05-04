@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kim Beomseok</title>
+    <style>
+        #main{width:100%;height:100%;}
+        #source{width:30%;float:left;min-height:500px;font-size:20px;}
+        #output{width:60%;min-height:600px;float:right;border:1px solid #aaa;padding:10px;}
+        #myframe{width:100%;height:100%;border:0;}
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <h1>With Color</h1>
+        <button id="go">Run</button>
+        <div ="source"></div>
+        <div id="output">
+            <h1>Output</h1>
+            <iframe id="myframe"></iframe>
+        </div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.3.3/ace.js"></script>
+<script>
+    g=document.querySelector("#go");
+    //f=document.querySelector("#myframe");
+    f=document.getElementById("myframe");
+    s = document.querySelector("#source");
+    function update(){
+        //alert(s.value);
+        fdoc = f.contentDocument || f.contentWindow.document;
+        //ifdoc.body.innerHTML = s.value;
+        fdoc.open();
+        fdoc.write(editor.getValue());
+        fdoc.close();
+    }
+
+    var  editor = ace.edit("source");
+    editor.setTheme("ace/theme/monokai");
+    editor.session.setMode("ace/mode/html");
+
+    editor.session.on('change', function(delta) {
+        update();
+    });
+</script>
+</html>

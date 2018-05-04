@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        svg{border:1px solid #000;}
+        #room:hover{
+            fill:#f90;
+        }
+    </style>
+</head>
+<body>
+    <!--
+    <h1>Be careful on the ViewBox</h1>
+    <svg width="200" height="200" viewBox="0 0 100 100">
+        <circle cx="100" cy="100" r="50" fill="none" stroke="red" storke-width="1"/>
+        Cannot make svg...
+    </svg>
+    <br/>
+    <svg width="2in" height="2in" viewBox="0 0 200 200">
+         <circle cx="100" cy="100" r="50" fill="none" stroke="red" storke-width="1"/>
+         Cannot make svg...
+    </svg>
+    -->
+    <h1>SVG path</h1>
+    <svg width="400" height="400">
+        <path d="M0 80 L400 80 Z" fill="none" stroke="red" stroke-width="1"/>
+        <path d="M0 160 L400 160 Z" fill="none" stroke="red" stroke-width="1"/>
+        <path d="M0 240 L400 240 Z" fill="none" stroke="red" stroke-width="1"/>
+        <path d="M0 320 L400 320 Z" fill="none" stroke="red" stroke-width="1"/>
+
+        <path d="M80 0 L80 400 Z" fill="none" stroke="blue" stroke-width="1"/>
+        <path d="M160 0 L160 400 Z" fill="none" stroke="blue" stroke-width="1"/>
+        <path d="M240 0 L240 400 Z" fill="none" stroke="blue" stroke-width="1"/>
+        <path d="M320 0 L320 400 Z" fill="none" stroke="blue" stroke-width="1"/>
+
+        <rect id="room" x="100" y="100" width="200" height="250" fill="none" stroke="green" stroke-width="4"/>
+        Cannot make svg...
+    </svg>
+</body>
+
+</html>
