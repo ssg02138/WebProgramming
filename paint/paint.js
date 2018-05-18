@@ -39,9 +39,9 @@ window.onload = function(evt){
 
 // pen width
 
-var minRad = 5;
+var minRad = 10;
 var maxRad = 100;
-var interval = 5;
+var interval = 10;
 var radSpan = document.getElementById("radval");
 var decRad = document.getElementById("decrad");
 var incRad = document.getElementById("incrad");
