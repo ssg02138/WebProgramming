@@ -76,10 +76,10 @@ eraser.addEventListener("click", function(event){
 
 //colors
 
-var colors = ["black", "grey", "red", "blue" , "green", "yellow", 
+var colors = ["black", "red", "orange", "yellow" , "green", "blue", 
                 "orange", "indigo", "violet", "pink"];
 
-var swatches = document.getElementsByClassName("swatch");
+var swatches = document.getElementById("colors");
 
 for(var i=0, n=swatches.length; i<n; i++){
     swatches[i].addEventListener("click", setSwatch);
@@ -106,8 +106,7 @@ function setColor(color){
 function setSwatch(event){
     var swatch = event.target;
 
-    setColor(swatch.style.backgroundColor);
-
+    setColor(colors[5]);
     swatch.className += " active";
 }
 
