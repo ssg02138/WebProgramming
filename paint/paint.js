@@ -77,7 +77,7 @@ eraser.addEventListener("click", function(event){
 //colors
 
 var colors = ["black", "red", "orange", "yellow" , "green", "blue", 
-                "orange", "indigo", "violet", "pink"];
+                "purple", "indigo", "violet", "pink"];
 
 var swatches = document.getElementById("colors");
 
