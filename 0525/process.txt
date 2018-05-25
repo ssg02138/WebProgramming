@@ -1,0 +1,5 @@
+RUN xampp -> apache, mysql run -> mkdir sumsung -> page, product, main 작업
+
+mysql Database 만들기
+1. db = samsam, table products
+2. id int(11) key, name varchar(30), price int(30)
