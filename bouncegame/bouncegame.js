@@ -72,8 +72,12 @@ function draw() {
             score++;
         }
         else {
-            alert("GAME OVER");
-            document.location.reload();
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillText("Game Over", canvas.width/2-45, canvas.height/2);
+            
+            canvas.addEventListener("click", function(e) {
+                document.location.reload();
+            });
         }
     }
     
