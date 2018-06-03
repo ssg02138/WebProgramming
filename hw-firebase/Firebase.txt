@@ -1,0 +1,7 @@
+Firebase 사용방법
+1. google firebase 회원가입
+2. console.firebase.google.com
+3. 프로젝트 생성 주소: https://webproject-61336.firebaseio.com/
+4. DEVELOP -> 만들기 test mode
+5. 클릭으로 데이터베이스 조작
+6. 

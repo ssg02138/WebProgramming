@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Customers</title>
+    <style>
+        #main{
+            width:700px;
+            min-height:500px;
+            margin:auto;
+            border:2px solid #aaa;
+            padding:5px;
+            font-size:1.5em;
+        }
+        #tab{
+            width:720px;
+            min-height:500px;
+            margin:auto;
+        }
+        input{
+            padding:5px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div id="tab">
+        <a href="./index.html">Home</a>&nbsp; &nbsp; &nbsp;<a href="./customers.html">Customers</a>&nbsp; &nbsp; &nbsp;<a href="./employees.html">Employees</a>
+        <h1>Customers</h1>
+        <div id="main">
+            ID <input type="text" id="id"><br/>
+            LAST NAME <input type="text" id="ln"><br/>
+            FIRST NAME <input type="text" id="fn"><br/>
+            BIRTY DAY <input type="text" id="bday"><br/>
+            <button id="button_save" style="WIDTH: 120pt; HEIGHT: 50pt; font-size:1.5em">Save</button>
+        </div>
+        
+        <table id="list" width="100%" border="">
+                <tr><td>&#9660 ID</td><td>&#9660 LAST NAME</td><td>&#9660 FIRST NAME</td><td>&#9660 BIRTHDAY</td><td>&#9660 AGE</td><th>&#9660 ACTIONS</th></tr>
+        </table>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+    <script src="customers.js"></script>
+</body>
+</html>
