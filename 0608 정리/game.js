@@ -1,3 +1,6 @@
+var w_score=0;
+var c_score=0;
+
 // Initialize Firebase
 function setupFirebase(){
     var config = {
@@ -10,83 +13,43 @@ function setupFirebase(){
     };
     firebase.initializeApp(config);
 
+    
     //firebase database event
     var ref = firebase.database().ref("products");
     ref.on("child_added", function(snap){
-        var list = document.querySelector("#list");
+        var war = document.querySelector("#war");
+        var cav = document.querySelector("#cav");
+        
+
+        var list = document.querySelector("#game");
         const tr = document.createElement("tr");
-        const td_id = document.createElement("td");
-        const td_ln = document.createElement("td");
-        const td_fn = document.createElement("td");
-        const td_bday = document.createElement("td");
-        const td_age = document.createElement("td");
-        // 삭제하기 위해 생성한 변수들
-        const td_action = document.createElement("td");
-        const action = document.createElement("a");
+        const td_description = document.createElement("td");
+        const td_points = document.createElement("td");
 
-        td_id.innerHTML=snap.child("id").val();
-        td_ln.innerHTML=snap.child("ln").val();
-        td_fn.innerHTML=snap.child("fn").val();
-        td_bday.innerHTML=snap.child("bday").val();
-
-        // 나이 계산
-        var birthday = new Date(snap.child("bday").val());
-        var today = new Date();
-        var years = today.getFullYear() - birthday.getFullYear();
-        birthday.setFullYear(today.getFullYear());
-        if (today < birthday)
-        {
-            years--;
+        
+        if(snap.child("team").val()=="Cavaliers"){
+            c_score=parseInt(c_score)+parseInt(snap.child("points").val());
         }
-        td_age.innerHTML=years;
+        if(snap.child("team").val()=="Warriors"){
+            w_score=parseInt(w_score)+parseInt(snap.child("points").val());
+        }
+        td_description.innerHTML=snap.child("team").val()+"-"+snap.child("description").val();
+        td_points.innerHTML=snap.child("points").val();
 
-        action.innerHTML="Delete";
-        action.href="#";
-        // 데이터베이스의 ID값 찾기
-        action.onclick=function (){
-            //alert(this.parentElement.parentElement.id);
-            var pid = this.parentElement.parentElement.id;
-            var product = firebase.database().ref("products").child(pid);
-
-            // 버튼누르면 해당하는 데이터베이스 데이터 삭제하기
-            product.remove();
-            // 버튼누르면 해당하는 html 코드 삭제하기
-            var del_tr = document.querySelector("#"+pid);
-            del_tr.remove();
-        };
-        td_action.appendChild(action);
-
-        tr.appendChild(td_id);
-        tr.appendChild(td_ln);
-        tr.appendChild(td_fn);
-        tr.appendChild(td_bday);
-        tr.appendChild(td_age);
-        tr.appendChild(td_action);
+        tr.appendChild(td_description);
+        tr.appendChild(td_points);
 
         tr.id = snap.key;
         list.appendChild(tr);
+        war.innerHTML=w_score;
+        cav.innerHTML=c_score;
+        
     });
+    
 }
 
 window.onload = function(){
     
     setupFirebase();
-    var btnSave = document.querySelector("#button_save");
-    // btnSave.onclick = function(){} 옛날 방법
-    btnSave.addEventListener("click", function(){
-        var id = document.querySelector("#id").value;
-        var ln = document.querySelector("#ln").value;
-        var fn = document.querySelector("#fn").value;
-        var bday = document.querySelector("#bday").value;
-
-        firebase.database().ref().child("products").push().set({
-            id:id,
-            ln:ln,
-            fn:fn,
-            bday:bday
-        });
-
-    });
-
     
 }
