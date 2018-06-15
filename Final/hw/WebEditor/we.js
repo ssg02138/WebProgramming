@@ -2,10 +2,10 @@
 g = document.querySelector("#go");
 
 // f = document.querySelector("#myframe");
-f = document.getElementById("myframe");
+f = document.getElementById("we_myframe");
 
 // source
-s = document.querySelector("#source");
+s = document.querySelector("we_#source");
 
 //RUN BUTTON CLICK
 function update(){
@@ -18,11 +18,11 @@ function update(){
     fdoc.close();     
 }
   //the editor
-var  editor = ace.edit("source");
-editor.setTheme("ace/theme/github");
-editor.session.setMode("ace/mode/html");
+ var  editor = ace.edit("we_source");
+  editor.setTheme("ace/theme/github");
+  editor.session.setMode("ace/mode/html");
 
-editor.setValue(`<!DOCTYPE html>
+ editor.setValue(`<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -35,6 +35,6 @@ editor.setValue(`<!DOCTYPE html>
 </body>
 </html>`);
 
-editor.session.on('change', function(delta) {
-    update();
-});
+  editor.session.on('change', function(delta) {
+      update();
+  });

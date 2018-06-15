@@ -6,25 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Final Project</title>
     <style>
-        #main{width:100%;height:100%;}
-        #menu{width:20%;float:left;
-                min-height: 500px; font-size:15px;}
-        #project{width:70%;float:right;
-        min-height: 500px; font-size:15px;}
-        #source{width:30%;float:center;
-                min-height: 500px; font-size:15px;}
-        #output{width:40%; height:500px;float:right; padding:10px;
-                border:1px solid #aaa;}
-        #myframe{width:100%;height:100%; border:0;}
+        
     </style>
     <link rel="stylesheet" type="text/css" href="svg.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="hw/Application/style.css">
+    <link rel="stylesheet" type="text/css" href="hw/Phonebook/phone.css">
+    <link rel="stylesheet" type="text/css" href="hw/Paint/style.css">
+    <link rel="stylesheet" type="text/css" href="hw/Bouncing/bounce.css">
+    <link rel="stylesheet" type="text/css" href="hw/BounceingGame/bouncegame.css">
+    <link rel="stylesheet" type="text/css" href="hw/WebEditor/style.css">
+    <link rel="stylesheet" type="text/css" href="hw/WebFirebase/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Mina|Rammetto+One" rel="stylesheet">
 </head>
 <body>
     <div id="main">
     <h1>Kim Beomseok 15054008</h1>
     <?xml version="1.0" encoding="utf-8"?>
-        <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          viewBox="-50 100 500 200" enable-background="new 0 0 400 400" xml:space="preserve">
         <g id="jjperezaguinaga">
             <g id="innerCircles">
@@ -121,18 +121,155 @@
                 </g>
             </g>
         </g>
-        </svg>
-
-    <div id="menu"></div>
-    <div id="project">
-        <div id="source"> </div>
-        <div id="output">
-        <iframe id="myframe"></iframe>
-        </div>
-    </div>
+    </svg>
     
+    <div class="tabs-container">
+        <div class="tabs-left">
+            <ul id="l1" class="nav nav-tabs">
+                <li id="l2" class="active"><a data-toggle="tab" href="#tab-1"> Home</a></li>
+                <li id="l2" class=""><a data-toggle="tab" href="#tab-2">PhoneBook</a></li>
+                <li id="l2" class=""><a data-toggle="tab" href="#tab-3">Paint</a></li>
+                <li id="l2" class=""><a data-toggle="tab" href="#tab-4">Bounceing Ball</a></li>
+                <li id="l2" class=""><a data-toggle="tab" href="#tab-5">Bounceing Ball Game</a></li>
+                <li id="l2" class=""><a data-toggle="tab" href="#tab-6">Web Editor</a></li>
+                <li id="l2" class=""><a data-toggle="tab" href="#tab-7">Web Firebase</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="tab-1" class="tab-pane active">
+                    <div class="panel-body">
+                        <div id="jb-container">
+                            <div id="app_main">
+                                <div id="app_menu_bar">
+                                        <div id="app_menu_left">
+                                            &#9776;
+                                        </div>
+                                        <div id="app_menu_right">
+                                            <a class="app_menu_item" href="#">Home</a>
+                                            <a class="app_menu_item" href="#">About Us</a>
+                                            <input class="app_serach" type="text" placeholder="Serach"/>
+                                        </div>
+                                        <div class="app_clear">&nbsp;</div>
+                                </div>
+                                <div id="app_content">
+                                    <br/>
+                                    <div id="app_profile_pic">
+                                    </div>
+                                    <h1 class="app_title">Kim Beomseok</h1>
+                                    <p class="app_subtitle">Athlete & Designer</p>
+                                    <br/>
+                                    <div id="app_portfolio">
+                                        <div class="app_box"></div>
+                                        <div class="app_box"></div>
+                                        <div class="app_box"></div>
+                                    </div>
+                        
+                                </div>
+                                <div id="app_footer">&copy; Kim Beomseok &trade; 2018</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div id="tab-2" class="tab-pane">
+                    <div class="panel-body">
+                    <div id="phone_main" style="text-align:left">
+                        Last Name <br/><input id="phone_ln" type="text"/>
+                        <br/>First Name <br/><input id="phone_fn" type="text"/>
+                        <br/>Phone Number <br/><input id="phone_phone" type="text"/>
+                        <br/><button id="phone_btnSave">Save</button>  
+                        <hr/>
+                        <form name="phone_form1">
+                            FirstName: <input type="text" id="phone_cb1"> 
+                            <input type="button" value="확인" onclick="phone_Check();"><br/><br/>
+                        </form>
+                        <table id="phone_insertTable">
+                            <tr>
+                                <th onclick='lnSort();'>&#9660 Last Name</th>
+                                <th onclick='fnSort();'>&#9660 First Name</th>
+                                <th onclick='phoneSort();'>&#9660 Phone number</th>
+                            </tr>
+                        </table>
+                    </div>
+                    </div>
+                </div>
+
+                <div id="tab-3" class="tab-pane">
+                    <div class="panel-body">
+                        <div id="paint_main">
+                            <canvas width="500" height="500" id="paint_mycanvas"></canvas>
+                            <p id="eraser">Eraser</p>
+                            <div id="rad">
+                                Pen Size <span id="radval">10</span>
+                                <div id="decrad" class="radcontrol">-</div>
+                                <div id="incrad" class="radcontrol">+</div>
+                                <div id="colors">colors</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tab-4" class="tab-pane">
+                    <div class="panel-body">
+                        <div id="bo_main">
+                            <h1>Bouncing Balls</h1>
+                            <canvas id="bo_my_canvas"  width="400" height="500">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tab-5" class="tab-pane">
+                    <div class="panel-body">
+                        <div id="bg_main">
+                            <h1>Bouncing Ball Game</h1>
+                            <p>VERSION 1.0</p>
+                            <canvas id="bg_myCanvas"  width="400" height="200">
+                            </canvas>
+                            <p id="bg_left">S - Move Left</p>
+                            <p id="bg_left">D - Move Right</p>
+                            <p id="bg_left">Click - Game Restart</p>
+                            <p id="bg_right">Developed by</p>
+                            <h4 id="bg_right">15054008 Kim Beom Seok</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tab-6" class="tab-pane">
+                    <div class="panel-body">
+                        <div id="we_main">
+                                    <h1>Web Editor</h1>
+                                    <div id="we_source"> </div>
+                                    <div id="we_output">
+                                    <iframe id="we_myframe"></iframe>
+                                    </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tab-7" class="tab-pane">
+                    <div class="panel-body">
+                        <div id="fire_main">
+                            <br/><br/><br/><br/>
+                            <a href="hw/WebFirebase/customers.html">Customers</a>&nbsp; &nbsp; &nbsp;<a href="hw/WebFirebase/employees.html">Employees</a>
+                            <br/>
+                            <h1>Kim Beom Seok Shopping Center</h1>
+                            <a>Developed by: Kim Beom Seok. Copyright 2018</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </div>
 </body>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.3.3/ace.js"></script>
-<script src="webeditor.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="hw/Phonebook/phonejs.js"></script>
+<script type="text/javascript" src="hw/Paint/paint.js"></script>
+<script type="text/javascript" src="hw/Bouncing/bounce.js"></script>
+<script type="text/javascript" src="hw/BounceingGame/bouncegame.js"></script>
+<script type="text/javascript" src="hw/WebEditor/we.js"></script>
+    
+<script src="js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.3.3/ace.js"></script>
 </html>

@@ -1,11 +1,11 @@
-title{
-    margin:left;
+
+#phone_main{
+    margin:auto;
+    width:600px;
+    min-height:600px;
+    background: #fff;
 }
-#main{
-    margin: left;
-    max-width: 500px;
-}
-#btnSave{
+#phone_btnSave{
     padding:5px;
     margin-top: 5px;
     background: cadetblue;
@@ -13,12 +13,12 @@ title{
     border:0;
     cursor: pointer;
 }
-table{
+phone_table{
     border:1px solid #ddd;
     width:100%;
 }
 
-mark {
+phone_mark {
   background-color: yellow;
   color: black;
 }

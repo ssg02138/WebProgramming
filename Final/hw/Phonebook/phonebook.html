@@ -13,18 +13,18 @@
 
 <body>
     <center>
-    <div id="title"><h1>Phone Book</h1></div>
-    <div id="main" style="text-align:left">
-        Last Name <br/><input id="ln" type="text"/>
-        <br/>First Name <br/><input id="fn" type="text"/>
-        <br/>Phone Number <br/><input id="phone" type="text"/>
-        <br/><button id="btnSave">Save</button>  
+    <div id="phone_title"><h1>Phone Book</h1></div>
+    <div id="phone_main" style="text-align:left">
+        Last Name <br/><input id="phone_ln" type="text"/>
+        <br/>First Name <br/><input id="phone_fn" type="text"/>
+        <br/>Phone Number <br/><input id="phone_phone" type="text"/>
+        <br/><button id="phone_btnSave">Save</button>  
         <hr/>
-        <form name="form1">
-          FirstName: <input type="text" id="cb1"> 
-          <input type="button" value="확인" onclick="Check();"><br/><br/>
+        <form name="phone_form1">
+          FirstName: <input type="text" id="phone_cb1"> 
+          <input type="button" value="확인" onclick="phone_Check();"><br/><br/>
      </form>
-        <table id="insertTable">
+        <table id="phone_insertTable">
             <tr>
               <th onclick='lnSort();'>&#9660 Last Name</th>
                 <th onclick='fnSort();'>&#9660 First Name</th>

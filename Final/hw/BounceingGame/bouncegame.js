@@ -1,4 +1,4 @@
-var canvas = document.getElementById("myCanvas");
+var canvas = document.getElementById("bg_myCanvas");
 var ctx = canvas.getContext("2d");
 var ballRadius = 10;
 var x = canvas.width/2;
@@ -91,5 +91,4 @@ function draw() {
     x += dx;
     y += dy;
 }
-
-setInterval(draw, 10);
+draw();

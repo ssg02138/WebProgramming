@@ -6,7 +6,7 @@ var radius;
 var lineWidth;
 
 window.onload = function(evt){
-    mycanvas = document.querySelector("#mycanvas");
+    mycanvas = document.querySelector("#paint_mycanvas");
     ctx = mycanvas.getContext("2d");
     draw = false;
     radius = 10;

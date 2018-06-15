@@ -1,9 +1,5 @@
-body{
-    background: #055;
-}
-
-#main{
-    width:960px;
+#bo_main{
+    width:460px;
     min-height:500px;
     padding:25px;
     margin:auto;
@@ -11,7 +7,7 @@ body{
     text-align: center;
 }
 
-#my_canvas{
+#bo_my_canvas{
     margin:auto;
     border:1px solid #555;
 }

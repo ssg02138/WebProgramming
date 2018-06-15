@@ -4,12 +4,12 @@ var pb = new Array();
 
 function removeRow(r){ 
     var i=r.parentNode.parentNode.rowIndex;
-    document.getElementById('insertTable').deleteRow(i);
+    document.getElementById('phone_insertTable').deleteRow(i);
     pb.splice(i-1,1);
 }
 
 function updateTable(p){
-    mytable = document.getElementById('insertTable');
+    mytable = document.getElementById('phone_insertTable');
     row = mytable.insertRow(mytable.rows.length);
 
     cell1 =row.insertCell(0);
@@ -24,7 +24,7 @@ function updateTable(p){
 }
 
 function lnSort(){
-    mytable = document.getElementById('insertTable');
+    mytable = document.getElementById('phone_insertTable');
     row = mytable.insertRow(mytable.rows.length);
 
     pb.sort(function(a, b) { // 오름차순
@@ -41,7 +41,7 @@ function lnSort(){
 }
 
 function fnSort(){
-    mytable = document.getElementById('insertTable');
+    mytable = document.getElementById('phone_insertTable');
     row = mytable.insertRow(mytable.rows.length);
 
     pb.sort(function(a, b) { // 오름차순
@@ -58,7 +58,7 @@ function fnSort(){
 }
 
 function phoneSort(){
-    mytable = document.getElementById('insertTable');
+    mytable = document.getElementById('phone_insertTable');
     row = mytable.insertRow(mytable.rows.length);
 
     pb.sort(function(a, b) { // 오름차순
@@ -74,21 +74,21 @@ function phoneSort(){
     }
 }
 
-document.getElementById("btnSave").onclick=function(){
+document.getElementById("phone_btnSave").onclick=function(){
     // table 삭제 후 배열 입력으로 대체
     var p = new Object();   // DataBase 사전 준비
-    p.lastName = document.getElementById("ln").value;
-    p.firstName = document.getElementById("fn").value;
-    p.phoneNumber = document.getElementById("phone").value;
+    p.lastName = document.getElementById("phone_ln").value;
+    p.firstName = document.getElementById("phone_fn").value;
+    p.phoneNumber = document.getElementById("phone_phone").value;
 
     pb.push(p);
 
     updateTable(p);
 }
 
-function Check(){
-    mytable = document.getElementById('insertTable');
-    var val = document.getElementById('cb1').value;
+function phone_Check(){
+    mytable = document.getElementById('phone_insertTable');
+    var val = document.getElementById('phone_cb1').value;
     var input;
     for(var i=1;i<=pb.length;i++){
         input = mytable.rows[i].cells[0].innerHTML;

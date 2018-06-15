@@ -1,0 +1,8 @@
+#paint_main{
+    margin:auto;
+    width:500px;
+    min-height:500px;
+}
+#paint_mycanvas{
+    border:3px solid #aaa;
+}

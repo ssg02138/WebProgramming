@@ -2,7 +2,7 @@ body{
     margin:0px;
 }
 
-#main{
+#app_main{
     margin:auto;
     margin-top:100px;
     margin-bottom:100px;
@@ -11,41 +11,41 @@ body{
     border:1px solid #ddd;
 }
 
-#menu_left{
+#app_menu_left{
     float:left;
     margin:10px;
 }
 
-#menu_right{
+#app_menu_right{
     float:right;
     margin:10px;
 }
 
-.menu_item{
+.app_menu_item{
     text-decoration: none;
     color:#000;
 }
 
-.search{
+.app_search{
     padding:2px;
     border-radius:10px;
     border:1px solid #aaa;
 }
-.clear{
+.app_clear{
     clear:both;
 }
-.title{
+.app_title{
     text-align:center;
 }
-.subtitle{
+.app_subtitle{
     margin-top: -20px;
     text-align:center;
 }
-#content{
+#app_content{
     background-color:whitesmoke;
     min-height:450px;
 }
-#profile_pic{
+#app_profile_pic{
     width:100px;
     height:100px;
     overflow:hidden;
@@ -57,11 +57,11 @@ body{
     background-position-x: -80px;
     background-position-y: -35px;
 }
-#portfolio{
+#app_portfolio{
     text-align: center;
     margin:5px;
 }
-#portfolio .box{
+#app_portfolio .app_box{
     width:100px;
     height:100px;
     border: 1px solid #aaa;
@@ -70,7 +70,7 @@ body{
     margin-top: 20px;
     background:#fff;
 }
-#footer{
+#app_footer{
     padding:20px;
     font-size:1em;
 }
